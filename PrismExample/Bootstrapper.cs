@@ -7,6 +7,9 @@ using System.Windows;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Unity;
+using PrismExample.Infrastructure;
+using PrismExample.Infrastructure.Interface;
+using PrismExample.Infrastructure.Service;
 using PrismExample.Views;
 
 namespace PrismExample
@@ -28,6 +31,13 @@ namespace PrismExample
             var catalog = (ModuleCatalog)ModuleCatalog;
             catalog.AddModule(typeof(Modules.Person.PersonModule));
             catalog.AddModule(typeof(Modules.Car.CarModule));
+        }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+
+            Container.RegisterType<ICarService, CarService>();
         }
     }
 }

@@ -7,6 +7,8 @@ using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Regions;
 using Prism.Unity;
+using PrismExample.Infrastructure.Interface;
+using PrismExample.Infrastructure.Service;
 using PrismExample.Modules.Car.Views;
 
 namespace PrismExample.Modules.Car

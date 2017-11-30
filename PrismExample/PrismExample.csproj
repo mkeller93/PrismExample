@@ -121,6 +121,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PrismExample.Infrastructure\PrismExample.Infrastructure.csproj">
+      <Project>{30788b80-b44f-46b2-bc60-a9191570c81a}</Project>
+      <Name>PrismExample.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PrismExample.Modules.Car\PrismExample.Modules.Car.csproj">
       <Project>{5b780076-1131-4d7c-af48-b79e4b167515}</Project>
       <Name>PrismExample.Modules.Car</Name>

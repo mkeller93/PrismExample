@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using PrismExample.Infrastructure.Interface;
 
 namespace PrismExample.Modules.Car.ViewModels
 {
     public class CarListViewModel : BindableBase
     {
         readonly IRegionManager regionManager;
+        private readonly ICarService carService;
 
         public string Title => "Cars";
 
@@ -25,9 +27,10 @@ namespace PrismExample.Modules.Car.ViewModels
 
         public DelegateCommand<Common.Car> CarSelectedCommand { get; private set; }
 
-        public CarListViewModel(RegionManager regionManager)
+        public CarListViewModel(RegionManager regionManager, ICarService carService)
         {
             this.regionManager = regionManager;
+            this.carService = carService;
 
             CarSelectedCommand = new DelegateCommand<Common.Car>(CarSelected);
             CreateCars();
@@ -45,15 +48,7 @@ namespace PrismExample.Modules.Car.ViewModels
         private void CreateCars()
         {
             var cars = new ObservableCollection<Common.Car>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                cars.Add(new Common.Car()
-                {
-                    Make = $"Make {i}"
-                });
-            }
-
+            cars.AddRange(carService.GetCars());
             Cars = cars;
         }
     }

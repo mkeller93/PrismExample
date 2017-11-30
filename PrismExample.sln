@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Common", "Pris
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Modules.Car", "PrismExample.Modules.Car\PrismExample.Modules.Car.csproj", "{5B780076-1131-4D7C-AF48-B79E4B167515}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Infrastructure", "PrismExample.Infrastructure\PrismExample.Infrastructure.csproj", "{30788B80-B44F-46B2-BC60-A9191570C81A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5B780076-1131-4D7C-AF48-B79E4B167515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B780076-1131-4D7C-AF48-B79E4B167515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B780076-1131-4D7C-AF48-B79E4B167515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30788B80-B44F-46B2-BC60-A9191570C81A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30788B80-B44F-46B2-BC60-A9191570C81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30788B80-B44F-46B2-BC60-A9191570C81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30788B80-B44F-46B2-BC60-A9191570C81A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
