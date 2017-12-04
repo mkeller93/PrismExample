@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using PrismExample.Infrastructure.Interface;
 
 namespace PrismExample.Modules.Person.ViewModels
 {
     public class PersonListViewModel : BindableBase
     {
-        readonly IRegionManager regionManager;
+        private IPersonService personService;
+        private readonly IRegionManager regionManager;
 
         public string Title => "People";
 
@@ -25,8 +27,9 @@ namespace PrismExample.Modules.Person.ViewModels
 
         public DelegateCommand<Domain.Person> PersonSelectedCommand { get; private set; }
 
-        public PersonListViewModel(RegionManager regionManager)
+        public PersonListViewModel(RegionManager regionManager, IPersonService personService)
         {
+            this.personService = personService;
             this.regionManager = regionManager;
 
             PersonSelectedCommand = new DelegateCommand<Domain.Person>(PersonSelected);
@@ -44,18 +47,7 @@ namespace PrismExample.Modules.Person.ViewModels
 
         private void CreatePeople()
         {
-            var people = new ObservableCollection<Domain.Person>();
-            for (int i = 0; i < 10; i++)
-            {
-                people.Add(new Domain.Person()
-                {
-                    FirstName = String.Format("First {0}", i),
-                    LastName = String.Format("Last {0}", i),
-                    Age = i
-                });
-            }
-
-            People = people;
+            People = new ObservableCollection<Domain.Person>(personService.GetPersons());
         }
     }
 }

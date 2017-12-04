@@ -62,11 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interface\ICarService.cs" />
+    <Compile Include="Interface\IPersonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\CarService.cs" />
+    <Compile Include="Service\PersonService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PrismExample.Common\PrismExample.Domain.csproj">
+    <ProjectReference Include="..\PrismExample.Domain\PrismExample.Domain.csproj">
       <Project>{caf79f0b-f760-4dd9-8746-c4bff63be514}</Project>
       <Name>PrismExample.Domain</Name>
     </ProjectReference>

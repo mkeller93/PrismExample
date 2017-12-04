@@ -7,6 +7,8 @@ using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Regions;
 using Prism.Unity;
+using PrismExample.Infrastructure.Interface;
+using PrismExample.Infrastructure.Service;
 using PrismExample.Modules.Person.Views;
 
 namespace PrismExample.Modules.Person
@@ -24,6 +26,8 @@ namespace PrismExample.Modules.Person
 
         public void Initialize()
         {
+            container.RegisterType<IPersonService, PersonService>();
+
             regionManager.RegisterViewWithRegion(Shell.Infrastructure.RegionNames.Content, typeof(PersonList));
             container.RegisterTypeForNavigation<PersonDetail>();
         }

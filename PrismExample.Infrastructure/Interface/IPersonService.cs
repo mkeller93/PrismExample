@@ -3,8 +3,8 @@ using PrismExample.Domain;
 
 namespace PrismExample.Infrastructure.Interface
 {
-    public interface ICarService
+    public interface IPersonService
     {
-        IEnumerable<Car> GetCars();
+        IEnumerable<Person> GetPersons();
     }
 }
