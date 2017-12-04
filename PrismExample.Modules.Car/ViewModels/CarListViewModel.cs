@@ -13,7 +13,7 @@ namespace PrismExample.Modules.Car.ViewModels
 {
     public class CarListViewModel : BindableBase
     {
-        readonly IRegionManager regionManager;
+        private readonly IRegionManager regionManager;
         private readonly ICarService carService;
 
         public string Title => "Cars";
@@ -42,7 +42,7 @@ namespace PrismExample.Modules.Car.ViewModels
             parameters.Add("car", car);
 
             if (car != null)
-                regionManager.RequestNavigate("CarDetailsRegion", "CarDetail", parameters);
+                regionManager.RequestNavigate(RegionNames.CarDetail, NavigationTargets.CarDetail, parameters);
         }
 
         private void CreateCars()

@@ -28,7 +28,7 @@ namespace PrismExample.Modules.Car
         {
             container.RegisterType<ICarService, CarService>();
 
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(CarList));
+            regionManager.RegisterViewWithRegion(Shell.Infrastructure.RegionNames.Content, typeof(CarList));
             container.RegisterTypeForNavigation<CarDetail>();
         }
     }

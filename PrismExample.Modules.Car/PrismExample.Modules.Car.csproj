@@ -69,7 +69,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarModule.cs" />
+    <Compile Include="NavigationTargets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegionNames.cs" />
     <Compile Include="ViewModels\CarDetailViewModel.cs" />
     <Compile Include="ViewModels\CarListViewModel.cs" />
     <Compile Include="Views\CarDetail.xaml.cs">
@@ -100,6 +102,10 @@
     <ProjectReference Include="..\PrismExample.Infrastructure\PrismExample.Infrastructure.csproj">
       <Project>{30788b80-b44f-46b2-bc60-a9191570c81a}</Project>
       <Name>PrismExample.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PrismExample.Shell.Infrastructure\PrismExample.Shell.Infrastructure.csproj">
+      <Project>{00bc0209-fdb2-4e18-a305-f9522edfcd3a}</Project>
+      <Name>PrismExample.Shell.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

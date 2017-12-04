@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:PrismExample.Modules.Person.Views"
              xmlns:regions="http://prismlibrary.com/"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             xmlns:prism="http://prismlibrary.com/" 
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:person="clr-namespace:PrismExample.Modules.Person"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -29,6 +30,6 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ListBox>
-        <TabControl Grid.Row="1" Margin="10" regions:RegionManager.RegionName="PersonDetailsRegion" />
+        <TabControl Grid.Row="1" Margin="10" regions:RegionManager.RegionName="{x:Static person:RegionNames.PersonDetail}" />
     </Grid>
 </UserControl>

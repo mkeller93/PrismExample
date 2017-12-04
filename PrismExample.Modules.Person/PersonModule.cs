@@ -24,7 +24,7 @@ namespace PrismExample.Modules.Person
 
         public void Initialize()
         {
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(PersonList));
+            regionManager.RegisterViewWithRegion(Shell.Infrastructure.RegionNames.Content, typeof(PersonList));
             container.RegisterTypeForNavigation<PersonDetail>();
         }
     }

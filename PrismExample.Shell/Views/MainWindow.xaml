@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrismExample"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:infrastructure="clr-namespace:PrismExample.Shell.Infrastructure;assembly=PrismExample.Shell.Infrastructure"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="350" Width="525">
@@ -14,6 +15,6 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <TabControl prism:RegionManager.RegionName="ContentRegion" />
+        <TabControl prism:RegionManager.RegionName="{x:Static infrastructure:RegionNames.Content}" />
     </Grid>
 </Window>

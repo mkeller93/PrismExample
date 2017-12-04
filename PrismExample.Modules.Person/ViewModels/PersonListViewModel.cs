@@ -39,7 +39,7 @@ namespace PrismExample.Modules.Person.ViewModels
             parameters.Add("person", person);
 
             if (person != null)
-                regionManager.RequestNavigate("PersonDetailsRegion", "PersonDetail", parameters);
+                regionManager.RequestNavigate(RegionNames.PersonDetail, NavigationTargets.PersonDetail, parameters);
         }
 
         private void CreatePeople()

@@ -131,6 +131,10 @@
       <Project>{3f530ff6-7f69-44bf-8aa9-5a209387b4fe}</Project>
       <Name>PrismExample.Modules.Person</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PrismExample.Shell.Infrastructure\PrismExample.Shell.Infrastructure.csproj">
+      <Project>{00bc0209-fdb2-4e18-a305-f9522edfcd3a}</Project>
+      <Name>PrismExample.Shell.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
