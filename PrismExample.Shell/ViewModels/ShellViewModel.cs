@@ -2,7 +2,7 @@
 
 namespace PrismExample.Shell.ViewModels
 {
-    public class MainWindowViewModel : BindableBase
+    public class ShellViewModel : BindableBase
     {
         private string title = "Prism Unity Application";
         public string Title
@@ -11,7 +11,7 @@ namespace PrismExample.Shell.ViewModels
             set { SetProperty(ref title, value); }
         }
 
-        public MainWindowViewModel()
+        public ShellViewModel()
         {
             
         }

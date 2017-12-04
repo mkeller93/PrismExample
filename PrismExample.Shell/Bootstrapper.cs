@@ -13,7 +13,7 @@ namespace PrismExample.Shell
     {
         protected override DependencyObject CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            return Container.Resolve<Views.Shell>();
         }
 
         protected override void InitializeShell()
