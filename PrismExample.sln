@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample", "PrismExample\PrismExample.csproj", "{04BF3732-1760-445F-A161-FF47E45EAB85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Shell", "PrismExample.Shell\PrismExample.Shell.csproj", "{04BF3732-1760-445F-A161-FF47E45EAB85}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Modules.Person", "PrismExample.Modules.Person\PrismExample.Modules.Person.csproj", "{3F530FF6-7F69-44BF-8AA9-5A209387B4FE}"
 EndProject
