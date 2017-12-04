@@ -87,9 +87,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PrismExample.Common\PrismExample.Common.csproj">
+    <ProjectReference Include="..\PrismExample.Common\PrismExample.Domain.csproj">
       <Project>{caf79f0b-f760-4dd9-8746-c4bff63be514}</Project>
-      <Name>PrismExample.Common</Name>
+      <Name>PrismExample.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\PrismExample.Shell.Infrastructure\PrismExample.Shell.Infrastructure.csproj">
       <Project>{00bc0209-fdb2-4e18-a305-f9522edfcd3a}</Project>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PrismExample.Common;
+using PrismExample.Domain;
 using PrismExample.Infrastructure.Interface;
 
 namespace PrismExample.Infrastructure.Service

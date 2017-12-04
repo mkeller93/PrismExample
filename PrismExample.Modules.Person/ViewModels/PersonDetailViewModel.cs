@@ -10,8 +10,8 @@ namespace PrismExample.Modules.Person.ViewModels
 {
     public class PersonDetailViewModel : BindableBase, INavigationAware
     {
-        private Common.Person _selectedPerson;
-        public Common.Person SelectedPerson
+        private Domain.Person _selectedPerson;
+        public Domain.Person SelectedPerson
         {
             get { return _selectedPerson; }
             set { SetProperty(ref _selectedPerson, value); }
@@ -24,13 +24,13 @@ namespace PrismExample.Modules.Person.ViewModels
 
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
-            if (navigationContext.Parameters["person"] is Common.Person person)
+            if (navigationContext.Parameters["person"] is Domain.Person person)
                 SelectedPerson = person;
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {
-            if (navigationContext.Parameters["person"] is Common.Person person)
+            if (navigationContext.Parameters["person"] is Domain.Person person)
                 return SelectedPerson != null && SelectedPerson.LastName == person.LastName;
 
             return true;

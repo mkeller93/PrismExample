@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Shell", "Prism
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Modules.Person", "PrismExample.Modules.Person\PrismExample.Modules.Person.csproj", "{3F530FF6-7F69-44BF-8AA9-5A209387B4FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Common", "PrismExample.Common\PrismExample.Common.csproj", "{CAF79F0B-F760-4DD9-8746-C4BFF63BE514}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Domain", "PrismExample.Domain\PrismExample.Domain.csproj", "{CAF79F0B-F760-4DD9-8746-C4BFF63BE514}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrismExample.Modules.Car", "PrismExample.Modules.Car\PrismExample.Modules.Car.csproj", "{5B780076-1131-4D7C-AF48-B79E4B167515}"
 EndProject

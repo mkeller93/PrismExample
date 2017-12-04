@@ -66,9 +66,9 @@
     <Compile Include="Service\CarService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PrismExample.Common\PrismExample.Common.csproj">
+    <ProjectReference Include="..\PrismExample.Common\PrismExample.Domain.csproj">
       <Project>{caf79f0b-f760-4dd9-8746-c4bff63be514}</Project>
-      <Name>PrismExample.Common</Name>
+      <Name>PrismExample.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

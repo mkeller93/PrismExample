@@ -18,25 +18,25 @@ namespace PrismExample.Modules.Car.ViewModels
 
         public string Title => "Cars";
 
-        private ObservableCollection<Common.Car> cars;
-        public ObservableCollection<Common.Car> Cars
+        private ObservableCollection<Domain.Car> cars;
+        public ObservableCollection<Domain.Car> Cars
         {
             get { return cars; }
             set { SetProperty(ref cars, value); }
         }
 
-        public DelegateCommand<Common.Car> CarSelectedCommand { get; private set; }
+        public DelegateCommand<Domain.Car> CarSelectedCommand { get; private set; }
 
         public CarListViewModel(RegionManager regionManager, ICarService carService)
         {
             this.regionManager = regionManager;
             this.carService = carService;
 
-            CarSelectedCommand = new DelegateCommand<Common.Car>(CarSelected);
+            CarSelectedCommand = new DelegateCommand<Domain.Car>(CarSelected);
             CreateCars();
         }
 
-        private void CarSelected(Common.Car car)
+        private void CarSelected(Domain.Car car)
         {
             var parameters = new NavigationParameters();
             parameters.Add("car", car);
@@ -47,7 +47,7 @@ namespace PrismExample.Modules.Car.ViewModels
 
         private void CreateCars()
         {
-            var cars = new ObservableCollection<Common.Car>();
+            var cars = new ObservableCollection<Domain.Car>();
             cars.AddRange(carService.GetCars());
             Cars = cars;
         }

@@ -16,24 +16,24 @@ namespace PrismExample.Modules.Person.ViewModels
 
         public string Title => "People";
 
-        private ObservableCollection<Common.Person> people;
-        public ObservableCollection<Common.Person> People
+        private ObservableCollection<Domain.Person> people;
+        public ObservableCollection<Domain.Person> People
         {
             get { return people; }
             set { SetProperty(ref people, value); }
         }
 
-        public DelegateCommand<Common.Person> PersonSelectedCommand { get; private set; }
+        public DelegateCommand<Domain.Person> PersonSelectedCommand { get; private set; }
 
         public PersonListViewModel(RegionManager regionManager)
         {
             this.regionManager = regionManager;
 
-            PersonSelectedCommand = new DelegateCommand<Common.Person>(PersonSelected);
+            PersonSelectedCommand = new DelegateCommand<Domain.Person>(PersonSelected);
             CreatePeople();
         }
 
-        private void PersonSelected(Common.Person person)
+        private void PersonSelected(Domain.Person person)
         {
             var parameters = new NavigationParameters();
             parameters.Add("person", person);
@@ -44,10 +44,10 @@ namespace PrismExample.Modules.Person.ViewModels
 
         private void CreatePeople()
         {
-            var people = new ObservableCollection<Common.Person>();
+            var people = new ObservableCollection<Domain.Person>();
             for (int i = 0; i < 10; i++)
             {
-                people.Add(new Common.Person()
+                people.Add(new Domain.Person()
                 {
                     FirstName = String.Format("First {0}", i),
                     LastName = String.Format("Last {0}", i),

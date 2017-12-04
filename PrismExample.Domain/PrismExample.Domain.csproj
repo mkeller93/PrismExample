@@ -7,8 +7,8 @@
     <ProjectGuid>{CAF79F0B-F760-4DD9-8746-C4BFF63BE514}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PrismExample.Common</RootNamespace>
-    <AssemblyName>PrismExample.Common</AssemblyName>
+    <RootNamespace>PrismExample.Domain</RootNamespace>
+    <AssemblyName>PrismExample.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
