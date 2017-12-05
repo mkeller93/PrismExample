@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PrismExample"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:infrastructure="clr-namespace:PrismExample.Shell.Infrastructure;assembly=PrismExample.Shell.Infrastructure"
+        xmlns:commands="clr-namespace:PrismExample.Shell.Infrastructure.Commands;assembly=PrismExample.Shell.Infrastructure"       
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="350" Width="525">
@@ -14,7 +15,22 @@
             <Setter Property="Header" Value="{Binding DataContext.Title}" />
         </Style>
     </Window.Resources>
-    <Grid>
-        <TabControl prism:RegionManager.RegionName="{x:Static infrastructure:RegionNames.Content}" />
-    </Grid>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" ItemsSource="{Binding Commands}">
+            <Menu.ItemContainerStyle>
+                <Style TargetType="{x:Type MenuItem}">
+                    <Setter Property="Command" Value="{Binding DelegateCommand}" />
+                </Style>
+            </Menu.ItemContainerStyle>
+            <Menu.ItemTemplate>
+                <HierarchicalDataTemplate DataType="{x:Type commands:ApplicationCommand}" ItemsSource="{Binding Path=Commands}">
+                    <TextBlock Text="{Binding Header}"/>
+                </HierarchicalDataTemplate>
+            </Menu.ItemTemplate>
+        </Menu>
+        <Grid>
+            <TabControl prism:RegionManager.RegionName="{x:Static infrastructure:RegionNames.Content}" />
+        </Grid>
+    </DockPanel>
 </Window>

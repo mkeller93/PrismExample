@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Prism.Mvvm;
+using PrismExample.Shell.Infrastructure.Commands;
 
 namespace PrismExample.Shell.ViewModels
 {
@@ -11,9 +14,15 @@ namespace PrismExample.Shell.ViewModels
             set { SetProperty(ref title, value); }
         }
 
-        public ShellViewModel()
+        public List<ApplicationCommand> Commands => registry.Commands.ToList();
+
+        private readonly IApplicationCommandRegistry registry;
+
+        public ShellViewModel(IApplicationCommandRegistry registry)
         {
-            
+            this.registry = registry;
+
+            this.registry.Updated += (s, e) => RaisePropertyChanged(nameof(Commands));
         }
     }
 }

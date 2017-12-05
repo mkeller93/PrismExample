@@ -5,6 +5,7 @@ using System.Windows;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Unity;
+using PrismExample.Shell.Infrastructure.Commands;
 using PrismExample.Shell.Views;
 
 namespace PrismExample.Shell
@@ -26,6 +27,15 @@ namespace PrismExample.Shell
             var catalog = (ModuleCatalog)ModuleCatalog;
             catalog.AddModule(typeof(Modules.Person.PersonModule));
             catalog.AddModule(typeof(Modules.Car.CarModule));            
+        }
+
+        protected override void ConfigureContainer()
+        {
+            base.ConfigureContainer();
+
+            Container.RegisterType<ApplicationCommand>();
+
+            Container.RegisterType<IApplicationCommandRegistry, ApplicationCommandRegistry>(new ContainerControlledLifetimeManager());
         }
     }
 }

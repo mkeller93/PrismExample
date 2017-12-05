@@ -5,30 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
-using Prism.Regions;
 using Prism.Unity;
 using PrismExample.Infrastructure.Interface;
 using PrismExample.Infrastructure.Service;
 using PrismExample.Modules.Car.Views;
+using PrismExample.Shell.Infrastructure.Commands;
 
 namespace PrismExample.Modules.Car
 {
     public class CarModule : IModule
     {
-        readonly IRegionManager regionManager;
         readonly IUnityContainer container;
+        private readonly IApplicationCommandRegistry registry;
 
-        public CarModule(RegionManager regionManager, IUnityContainer container)
+        public CarModule(IUnityContainer container, IApplicationCommandRegistry registry)
         {
-            this.regionManager = regionManager;
             this.container = container;
+            this.registry = registry;
         }
 
         public void Initialize()
         {
             container.RegisterType<ICarService, CarService>();
 
-            regionManager.RegisterViewWithRegion(Shell.Infrastructure.RegionNames.Content, typeof(CarList));
+            registry.Register<CarList>("Car", "List", Shell.Infrastructure.RegionNames.Content);
+            
             container.RegisterTypeForNavigation<CarDetail>();
         }
     }

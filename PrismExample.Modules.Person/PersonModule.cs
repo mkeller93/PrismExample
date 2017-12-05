@@ -5,30 +5,31 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
-using Prism.Regions;
 using Prism.Unity;
 using PrismExample.Infrastructure.Interface;
 using PrismExample.Infrastructure.Service;
 using PrismExample.Modules.Person.Views;
+using PrismExample.Shell.Infrastructure.Commands;
 
 namespace PrismExample.Modules.Person
 {
     public class PersonModule : IModule
     {
-        readonly IRegionManager regionManager;
         readonly IUnityContainer container;
+        private readonly IApplicationCommandRegistry registry;
 
-        public PersonModule(RegionManager regionManager, IUnityContainer container)
+        public PersonModule(IUnityContainer container, IApplicationCommandRegistry registry)
         {
-            this.regionManager = regionManager;
             this.container = container;
+            this.registry = registry;
         }
 
         public void Initialize()
         {
             container.RegisterType<IPersonService, PersonService>();
 
-            regionManager.RegisterViewWithRegion(Shell.Infrastructure.RegionNames.Content, typeof(PersonList));
+            registry.Register<PersonList>("Person", "List", Shell.Infrastructure.RegionNames.Content);
+
             container.RegisterTypeForNavigation<PersonDetail>();
         }
     }
