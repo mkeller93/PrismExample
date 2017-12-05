@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel.Composition.Hosting;
+using System.IO;
 using System.Reflection;
 using System.Windows;
 using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Unity;
 using PrismExample.Shell.Infrastructure.Commands;
+using PrismExample.Shell.Infrastructure.ModuleCatalogs;
 using PrismExample.Shell.Views;
 
 namespace PrismExample.Shell
@@ -22,13 +24,11 @@ namespace PrismExample.Shell
             Application.Current.MainWindow.Show();
         }
 
-        protected override void ConfigureModuleCatalog()
+        protected override IModuleCatalog CreateModuleCatalog()
         {
-            var catalog = (ModuleCatalog)ModuleCatalog;
-            catalog.AddModule(typeof(Modules.Person.PersonModule));
-            catalog.AddModule(typeof(Modules.Car.CarModule));            
+            return new SubdirectoryModuleCatalog{ModulePath = ".\\Modules"};
         }
-
+        
         protected override void ConfigureContainer()
         {
             base.ConfigureContainer();

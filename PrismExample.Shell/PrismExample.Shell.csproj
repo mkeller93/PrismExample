@@ -123,14 +123,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PrismExample.Modules.Car\PrismExample.Modules.Car.csproj">
-      <Project>{5b780076-1131-4d7c-af48-b79e4b167515}</Project>
-      <Name>PrismExample.Modules.Car</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PrismExample.Modules.Person\PrismExample.Modules.Person.csproj">
-      <Project>{3f530ff6-7f69-44bf-8aa9-5a209387b4fe}</Project>
-      <Name>PrismExample.Modules.Person</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PrismExample.Shell.Infrastructure\PrismExample.Shell.Infrastructure.csproj">
       <Project>{00bc0209-fdb2-4e18-a305-f9522edfcd3a}</Project>
       <Name>PrismExample.Shell.Infrastructure</Name>
